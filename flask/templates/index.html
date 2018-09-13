@@ -96,7 +96,7 @@
 </script>
 <script type="text/javascript">
     layui.use(['form', 'layer'], function () {
-        var $ = layui.$
+        var $ = layui.$;
         var form = layui.form;
         form.on('submit(monitor)', function (data) {
             console.log(JSON.stringify(data.field));
@@ -113,7 +113,7 @@
                         layer.alert('新增失败！')
                     }
                 }
-            })
+            });
             return false;
         });
     })

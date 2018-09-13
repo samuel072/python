@@ -13,7 +13,7 @@
     <div class="wrapper">
         <div class="container">
             <h1>Welcome</h1>
-            <form class="form" method="post" action="/" onsubmit="return doLogin();">
+            <form class="form" method="POST" action="/index" onsubmit="return doLogin();">
                 <input type="text" placeholder="Username" name="username" id="username" value="admin" />
                 <input type="password" placeholder="Password" name="password" id="password" value="123456" />
                 <button type="submit" id="login-button">Login</button>
@@ -40,7 +40,7 @@
     function doLogin() {
         var login = false;
         $.ajax({
-            url: '/login',
+            url: '/user/login',
             data: "username=" + $("#username").val() + "&password=" + $("#password").val(),
             type: 'POST',
             contentType: 'application/x-www-form-urlencoded',
@@ -52,6 +52,7 @@
                         alert(d.errmsg);
                         login = false;
                     } else {
+                        layer.alert(d.errmsg);
                         login = true;
                     }
                 } else {
