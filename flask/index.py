@@ -1,7 +1,8 @@
-from flask import Flask, render_template, session, url_for
+from flask import Flask, render_template, session
 from config import DevConfig
-from login import user_blueprint
-from db import db
+from com.kaiji.flask.controller.ApiController import api
+from com.kaiji.flask.controller.login import user_blueprint
+from com.kaiji.flask.model.db import db
 
 app = Flask(__name__)
 db.init_app(app)
@@ -10,6 +11,7 @@ db.init_app(app)
 # 加载配置文件
 app.config.from_object(DevConfig)
 app.register_blueprint(blueprint=user_blueprint, url_prefix="/user")
+app.register_blueprint(blueprint=api, url_prefix="/api")
 
 
 @app.route("/")

@@ -1,7 +1,7 @@
 #!/usr/bin/python3.5
 # -*- coding utf-8
 from flask_login import UserMixin
-from db import db
+from com.kaiji.flask.model.db import db
 
 
 class User(db.Model, UserMixin):

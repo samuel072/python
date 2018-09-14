@@ -1,7 +1,7 @@
 #!/usr/bin/python3.5
 # -*- coding utf-8
 from flask import request, Blueprint, render_template, jsonify, session
-from User import User
+from com.kaiji.flask.model.User import User
 
 
 user_blueprint = Blueprint(name="user", import_name=__name__)
